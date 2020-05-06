@@ -6,5 +6,13 @@ const bookingSchema = new Schema ({
         type : Schema.Types.ObjectId,
         ref : 'user'
     },
-    
+    title :{
+        type : Schema.Types.ObjectId,
+        ref : 'Event'
+    }
+    date :{
+        type : Schema.Types.ObjectId,
+        ref : 'Event'
+    }
 })
+module.exports = mongoose.model('Booking', bookingSchema)
