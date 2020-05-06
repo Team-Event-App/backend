@@ -6,15 +6,20 @@ const eventSchema = new Schema ({
         type : String,
         required : true
     },
+    category :{
+        type : String,
+        required : true
+    },
     description :{
         type : String,
         required : true
     },
-    detail : {
+   
+    imageEvent : {
         type : String,
         required : true
     },
-    imageEvent : {
+    organizerName : {
         type : String,
         required : true
     },
@@ -22,7 +27,11 @@ const eventSchema = new Schema ({
         type : String,
         required : true
     },
-    contactPerson : {
+    typeEvent : {
+        type : String,
+        required : true
+    },
+    location : {
         type : String,
         required : true
     },
@@ -31,6 +40,10 @@ const eventSchema = new Schema ({
         required : true
     },
     limitPeople :{
+        type : String,
+        required : true
+    },
+    detail : {
         type : String,
         required : true
     }

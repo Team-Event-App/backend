@@ -10,7 +10,10 @@ module.exports = function validateRegisterInput(data) {
   data.password = !isEmpty(data.password) ? data.password : "";
  
 // Name checks
-  if (Validator.isEmpty(data.name)) {
+  if (Validator.isEmpty(data.username)) {
+    errors.name = "Name field is required";
+  }
+  if (Validator.isEmpty(data.fullname)) {
     errors.name = "Name field is required";
   }
 // Email checks
@@ -28,9 +31,6 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password field is required";
   }
 
-if (!Validator.isLength(data.password, { min: 8, max: 30 })) {
-    errors.password = "Password must be at least 8 characters";
-  }
 
 return {
     errors,

@@ -9,7 +9,7 @@ const bookingSchema = new Schema ({
     title :{
         type : Schema.Types.ObjectId,
         ref : 'Event'
-    }
+    },
     date :{
         type : Schema.Types.ObjectId,
         ref : 'Event'
