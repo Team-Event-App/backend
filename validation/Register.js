@@ -11,10 +11,10 @@ module.exports = function validateRegisterInput(data) {
  
 // Name checks
   if (Validator.isEmpty(data.username)) {
-    errors.name = "Name field is required";
+    errors.name = "username field is required";
   }
   if (Validator.isEmpty(data.fullname)) {
-    errors.name = "Name field is required";
+    errors.name = "fullname field is required";
   }
 // Email checks
   if (Validator.isEmpty(data.email)) {
@@ -30,7 +30,7 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
-
+  
 
 return {
     errors,

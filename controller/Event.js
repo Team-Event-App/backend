@@ -27,5 +27,20 @@ module.exports = {
         .catch((err)=> {
             throw err;
         })
-    }
+    },
+    getDataById: (req, res) => {
+        EventSchema.findById(req.params.userId)
+        .then((result)=> res.json(result))
+        .catch((err) => {
+            throw err;
+        })
+    },
+    deleteById: (req, res) => {
+        EventSchema.findByIdAndRemove(req.params.userId)
+        .then((result) => res.json(result))
+        .catch ((err) => {
+            throw err;
+        })
+    },
+    
 }

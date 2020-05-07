@@ -26,7 +26,7 @@ const userSchema = new Schema ({
         required : true
     },
     imageUrl :{
-        type : String
+        type : String,
     } 
 })
 userSchema.pre("save", function (next) {

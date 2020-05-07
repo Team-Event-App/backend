@@ -13,7 +13,7 @@ module.exports = {
       email: req.body.email,
       phone: req.body.phone,
       password: req.body.password,
-      imageUrl : req.body.imageUrl
+      imageUrl : req.file && req.file.path,
     };
     const { errors, isValid } = validationRegister(obj);
     if (!isValid) {
