@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const privateKey = "testing123";
 
-const validationRegister = require("../validation/register");
+const validationRegister = require("../validation/Register");
 
 module.exports = {
   register: (req, res, next) => {
@@ -13,6 +13,7 @@ module.exports = {
       email: req.body.email,
       phone: req.body.phone,
       password: req.body.password,
+      imageUrl : req.body.imageUrl
     };
     const { errors, isValid } = validationRegister(obj);
     if (!isValid) {

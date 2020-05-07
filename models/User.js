@@ -24,7 +24,14 @@ const userSchema = new Schema ({
     password :{
         type : String,
         required : true
+    },
+    imageUrl :{
+        type : String
     } 
 })
+userSchema.pre("save", function (next) {
+    this.password = Bcrypt.hashSync(this.password, saltRounds);
+    next();
+  });
 
 module.exports = mongoose.model("User", userSchema);

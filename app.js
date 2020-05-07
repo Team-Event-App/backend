@@ -11,7 +11,7 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 const UserRouter = require('./routes/User');
-
+const EventRouter = require('./routes/Event')
 var app = express();
 mongodConnect = process.env.DB_LOCAL;
 mongoose.connect(mongodConnect, {
@@ -29,8 +29,18 @@ app.use(cookieParser());
 app.use("/public", express.static("public"));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use("/")
 app.use('/', indexRouter);
 app.use('/user', UserRouter);
+app.use('/event',validateUser , EventRouter)
 
+function validateUser(req, res, next) {
+    jwt.verify(req.headers["access-token"], privateKey, (err, decoded) => {
+      if (err) {
+        res.json(err);
+      } else {
+        req.body.userId = decoded.id;
+        next();
+      }
+    });
+  }
 module.exports = app;
