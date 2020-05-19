@@ -81,4 +81,18 @@ module.exports = {
       .then((result) => res.json(result))
       .catch((err) => res.json(err));
   },
+  //belum jalan
+  updateDataById: (req, res) => {
+    User.findByIdAndUpdate(req.params.userId,
+      {
+      username: req.body.username,
+      fullname: req.body.fullname,
+      phone: req.body.phone,
+      email: req.body.email,
+      password : req.body.password,
+      imageUrl : req.file && req.file.path
+    })
+    .then((result) => res.json(result))
+    .catch((err) => res.status(400).json(err));
+},
 };

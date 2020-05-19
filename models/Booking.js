@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const user = require('./User')
+const Event = require('./Event')
 const bookingSchema = new Schema ({
     name : {
         type : Schema.Types.ObjectId,

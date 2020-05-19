@@ -9,7 +9,7 @@ module.exports = {
             imageEvent : req.file && req.file.path,
             organizerName : req.body.organizerName,
             responsibleName : req.body.responsibleName,
-            typeEvent : req.body.typeEvent,
+            time : req.body.time,
             location : req.body.location,
             date : req.body.date,
             limitPeople : req.body.limitPeople,
